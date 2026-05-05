@@ -1,0 +1,59 @@
+{
+  "entities": {
+    "Brand": {
+      "title": "Brand",
+      "description": "Core brands of Elite Group",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "tagline": { "type": "string" },
+        "image": { "type": "string" },
+        "link": { "type": "string" },
+        "desc": { "type": "string" },
+        "order": { "type": "number" }
+      },
+      "required": ["name", "image", "order"]
+    },
+    "TeamMember": {
+      "title": "Team Member",
+      "description": "Leadership team of Elite Group",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "role": { "type": "string" },
+        "bio": { "type": "string" },
+        "image": { "type": "string" },
+        "badges": { "type": "array", "items": { "type": "string" } },
+        "initials": { "type": "string" },
+        "order": { "type": "number" }
+      },
+      "required": ["name", "role", "image", "order"]
+    },
+    "GalleryItem": {
+      "title": "Gallery Item",
+      "description": "Visual highlights and achievements",
+      "type": "object",
+      "properties": {
+        "url": { "type": "string" },
+        "title": { "type": "string" },
+        "category": { "type": "string" },
+        "uploadedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["url", "title", "uploadedAt"]
+    }
+  },
+  "firestore": {
+    "brands": {
+      "schema": "Brand",
+      "description": "Collection of corporate brands"
+    },
+    "team": {
+      "schema": "TeamMember",
+      "description": "Leadership team members"
+    },
+    "gallery": {
+      "schema": "GalleryItem",
+      "description": "Corporate gallery items"
+    }
+  }
+}
